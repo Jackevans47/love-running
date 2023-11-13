@@ -1,23 +1,26 @@
-/* Google fonts import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Asterisk wildcard selector to overide default styles added by the browser */
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* General styles */
 body {
-    min-height:100vh;
-    display:flex;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    /* Generic project style */
-    color:#3a3a3a;
-    font-family:'lato', sans-serif;
+    /* Generic project styles */
+    color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -28,17 +31,17 @@ h1, h2, h3 {
     display: none;
 }
 
-/* Header*/
+/* Header */
 header {
     background-color: #ffffff;
     padding: 0 1rem;
     position: fixed;
     z-index: 99;
-    width:100%;
+    width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items:baseline;
+    align-items: baseline;
 }
 
 header a {
@@ -46,65 +49,65 @@ header a {
     color: inherit;
 }
 
-
-
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
 }
-#menu > li{
+
+#menu>li {
     margin-bottom: 1em;
 }
 
-.active{
+.active {
     border-bottom: 1px solid #3a3a3a;
 }
 
-/* Navbar styles with dropdown toggle*/
-nav{
+/* Navbar styles with dropdown toggle */
+nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
     left: 0;
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
-    display:none;
+    display: none;
     top: 100%;
-    
 }
+
 /* Nav toggle */
 #nav-toggle:checked~nav {
-display:block;
+    display: block;
 }
 
 #nav-toggle {
-    display:none;
+    display: none;
 }
+
 .nav-toggle-label {
     font-size: 2rem;
 }
+
 /* Main content */
-main{
-    
-    /* Make main element take up any surplus space to push footer down*/
+main {
+    /* Enlarge main element to push footer down*/
     flex: 1 0 auto;
+    /* Add margin at the top to prevent content from being covered by the header */
     margin-top: 47px;
-    /* enable flex properties for child elements*/
-    display:flex;
-    flex-direction:colomn;
-
-
+    /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
 }
-/* Hero*/
+
+/* Hero section */
 #hero {
-    height:600px;
+    height: 600px;
     width: 100%;
     background: url("../images/hero-image.webp") no-repeat center center/cover;
     position: relative;
 }
 
-#cover-text{
+#cover-text {
     /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
@@ -115,10 +118,13 @@ main{
     padding-top: 40px;
     padding-left: 10px;
 }
-#cover-text > h2, #cover-text > h3 {
-    color:#ffffff;
+
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff;
 }
 
+/* Reasons section */
 #reasons {
     width: 90%;
     margin: 20px auto;
@@ -130,18 +136,17 @@ main{
     font-size: 280%;
 }
 
-#benifits-physical>div,
-#benifits-mental>div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
 
-#benifits p {
-    padding: 0 2px;
-
+#benefits p {
+    padding: 0 20px;
 }
 
-#benifits hr {
+#benefits hr {
     border-top: 1px solid #3a3a3a;
     margin: 5px 0;
 }
@@ -151,72 +156,76 @@ main{
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
-    /*make square into a circle*/
+    /* Makes the square image into a circle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
 }
 
-#benifits-image {
+#benefits-image {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Meetup times section */
+/* Meetup Times section */
 #times {
     background: url('../images/dublin-city.webp') no-repeat center/cover;
-    /*Handles responsivity without the need for a media query*/
+    /* Handles responsivity without the need for a media query */
     display: flex;
-    flex-wrap :wrap;
+    flex-wrap: wrap;
 }
 
 #times div {
-    color:#fafafa;
+    color: #fafafa;
     background-color: rgba(0, 0, 0, .6);
     padding: 15px;
     text-align: center;
     /* This will not wrap on screens of less than 400px wide.
-    Each div will expand to fill the avaliable space on its row */
+    Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* Creates a grid of meetup times divs over background image */
+    /* Creates a grid of meetup time dives over the background image */
     border: 2px solid white;
 }
 
 #times h3 {
-    /*override the heading colour in general styles */
+    /* Override the heading colour set in general styles */
     color: #fafafa;
 }
 
 /* Gallery page */
 #photos img {
     width: 100%;
-    line-height:  1em;
+    line-height: 1em;
 }
-#photos {
-line-height: 0;
 
+#photos {
+    line-height: 0;
 }
-/*Form*/
+
+/* Form */
 #signup {
-    background-image:url("../images/signup-image.webp");
+    background-image: url("../images/signup-image.webp");
     background-size: cover;
     background-position: 75%;
     padding: 20px 10% 0 10%;
     flex-grow: 1;
 }
 
+
 #signup-form {
-    color:#ffffff;
-    background-color: rgba (60, 60, 60, 0.6);
+    color: #ffffff;
+    background-color: rgba(60, 60, 60, 0.6);
     padding: 30px;
 }
 
+
 #signup-form>h2 {
-color: #fafafa;
-margin-bottom: 20px;
+    color: #fafafa;
+    margin-bottom: 20px;
 }
+
 
 .text-input {
     background: transparent;
@@ -229,11 +238,13 @@ margin-bottom: 20px;
     padding: 0 5px;
 }
 
+
 .radio-buttons {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
+
 
 .join-button {
     margin-top: 20px;
@@ -243,6 +254,7 @@ margin-bottom: 20px;
     background-color: #454b1b;
     color: #fafafa;
 }
+
 /* Footer */
 #social-networks {
     text-align: center;
@@ -258,7 +270,7 @@ margin-bottom: 20px;
     color: #3a3a3a;
 }
 
-/* media query: Large or Landscape phones (576px and up) */
+/* Media query: large or landscape phones (576px and up) */
 @media screen and (min-width: 576px) {
     #photos {
         column-count: 2;
@@ -266,7 +278,7 @@ margin-bottom: 20px;
     }
 }
 
-/* media query: tablets and larger (768px and up) */
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
     /* Header */
@@ -277,85 +289,90 @@ margin-bottom: 20px;
         width: fit-content;
         padding-right: 1rem;
     }
- #menu {
-    display: flex;
 
- }
+    #menu {
+        display: flex;
+    }
 
- #menu > li {
-    padding-left: 1rem;
- }
- .nav-toggle-label{
-    display:none;
- }
- #logo {
-    font-size: 280%;
-    line-height: 75px;
-    margin: 0 0.5rem;
- }
- /* Main content */
- main {
-    /* push main content down to accomidate larger header */
-    margin-top: 79px;
- }
+    #menu>li {
+        padding-left: 1rem;
+    }
 
- /* Hero */
- #cover-text {
-    width: 300px;
-    right: 50px;
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+
+    /* Hero */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
+
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
+
+    /* Gallery */
+    #photos {
+        column-count: 3;
+    }
+
+    /* Form */
+    #signup {
+        background-position: center;
+        position: relative;
+    }
+
+    #signup-form {
+        max-width: 400px;
+        position: absolute;
+        left: 10%;
+        top: 150px;
+    }
+
+    .text-input:hover {
+        border-color: #f16c6b;
+    }
+
+    .join-button:hover {
+        background-color: #fafafa;
+        color: #454b1b;
+    }
 }
 
-/* reasons section*/
-#benifits-physical,
-#benifits-mental {
-    display: flex;
-    flex-direction: column;
-    width:100%;
-}
-
-#benifits-physical > div,
-#benifits-mental > div {
-    width: 75%;
-}
-
-#benifits-mental>div{
-    text-align: end;
-    align-self: flex-end;
-}
-
-/* Gallery */
-#photos {
-    column-count: 3;
-}
-
-/* Form */
-#signup {
-    background-position: center;
-    position: relative;
-}
-
-#signup-form {
-    max-width: 400px;
-    position: absolute;
-    left: 10%;
-    top: 150px;
-}
-
-.text-input:hover {
-    border-color: #f16c6b;
-
-}
-
-.join-button:hover {
-    background-color: #fafafa;
-    color: #454b1b;
-}
-/* Large devices (laptopd and desktops, 992px and up) */
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    #menu a:hover{
+    #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
-    /*. Gallery */
+
+    /* Gallery */
     #photos {
         column-count: 4;
     }
